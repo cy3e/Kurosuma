@@ -1,26 +1,23 @@
-﻿@page "/"
+@page "/"
+@inject NavigationManager NavigationManager
+
+
+<style>
+
+    img
+    {
+       
+    }
+
+</style>
+
 
 <PageTitle>ようこそ</PageTitle>
 
-
 <center>
-    <img src = "https://cdn.discordapp.com/attachments/926549421083197481/954772873447358485/kurosuma-logo.gif"  />
     <br/>
-    <strong > Page still in development , i'm glad you came for see my projects, just wait to see the amazing things that i can do  </Strong>
+    <img  src = "https://cdn.discordapp.com/attachments/926549421083197481/954772873447358485/kurosuma-logo.gif"@ondblclick = "@dbc" @onclick ="@apps" @ondrag = "@drg"/>
 </center>
-
-
-
-<div class= "card-div-holder">
-
-
-
-
-</div>
-
-
-
-
 
 @code
 {
@@ -28,8 +25,40 @@
     // String urls [] = { };
 
 
-    public void ulr(){}
 
+    public void apps()
+    {
+        String[] urls = { "https://github.com/cy3e", "https://linkedin.com/in/christopher-richardson-a40a70190/", "", "", "", "", "" };
+        try
+        {
+
+            Random rand = new Random();
+            int ra = rand.Next(5);
+            NavigationManager.NavigateTo(urls[ra]);
+            Console.WriteLine("has sido redireccionado a :" +" "+ urls[ra].Substring(8,9));
+
+        }
+        catch (Exception e01 )
+        {
+
+            Console.Write("no hay data que mostrar");
+        };
+
+
+
+    }
+
+    public void dbc()
+    {
+        // aqui va a mostrarr una animacion to guay o nos redirigira a otro projecto
+
+    }
+
+    public void drg()
+    {
+        //en este lo que pasara es que el va a salir un tiburon o un animal slavaje desde el fondo de la pantalla y tratara de comerse el objeto
+
+    }
 
     /*
      * <h2> WEBDEV, Software engenier, Future IA DEV, Gamer</h2>
